@@ -57,23 +57,47 @@ const inputElement = document.getElementById('title');
 const createBtn = document.getElementById('create');
 const listElement = document.getElementById('list');
 
+const notes = [{
+  title: 'write blog about massive',
+  competed: false
+}, 
+{
+  title: 'theory of object',
+  completed: false
+}, 
+{
+  title: 'learn JS',
+  completed: false
+}];
+
+function render() {
+  for (let i = 0; i < notes.length; i++) {
+  listElement.insertAdjacentHTML(
+    'beforeend', 
+    getNoteTemplate(notes[i])
+  )
+}
+}
+
+render();
+
 createBtn.onclick = function() {
-  // listElement.innerHTML = `<li class="notateItem">
-  //       <span>${inputElement.value}</span>
-  //       <span class="buttons">
-  //         <span class="check">&check;</span>
-  //         <span class="del">&times;</span>
-  //       </span>
-  //     </li>`
-  // inputElement.value = '';
+  if (inputElement.value.length === 0) {
+    return
+  }
   listElement.insertAdjacentHTML(
         'beforeend', 
-      `<li class="notateItem">
-        <span>${inputElement.value}</span>
+        getNoteTemplate(inputElement.value)
+      )
+      inputElement.value = '';
+}
+
+function getNoteTemplate(title) {
+  return `<li class="notateItem">
+        <span>${title}</span>
         <span class="buttons">
           <span class="check">&check;</span>
           <span class="del">&times;</span>
         </span>
-      </li>`)
-      inputElement.value = '';
+      </li>`
 }
