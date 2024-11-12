@@ -50,3 +50,30 @@ submitBtn.onclick = function() {
   //   printResult(sum);
   // }
 }
+
+/* Notate */
+
+const inputElement = document.getElementById('title');
+const createBtn = document.getElementById('create');
+const listElement = document.getElementById('list');
+
+createBtn.onclick = function() {
+  // listElement.innerHTML = `<li class="notateItem">
+  //       <span>${inputElement.value}</span>
+  //       <span class="buttons">
+  //         <span class="check">&check;</span>
+  //         <span class="del">&times;</span>
+  //       </span>
+  //     </li>`
+  // inputElement.value = '';
+  listElement.insertAdjacentHTML(
+        'beforeend', 
+      `<li class="notateItem">
+        <span>${inputElement.value}</span>
+        <span class="buttons">
+          <span class="check">&check;</span>
+          <span class="del">&times;</span>
+        </span>
+      </li>`)
+      inputElement.value = '';
+}
