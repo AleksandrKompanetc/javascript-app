@@ -71,10 +71,10 @@ const notes = [{
 }];
 
 function render() {
-  for (let i = 0; i < notes.length; i++) {
+  for (let note of notes) {
   listElement.insertAdjacentHTML(
     'beforeend', 
-    getNoteTemplate(notes[i])
+    getNoteTemplate(note)
   )
 }
 }
@@ -85,16 +85,20 @@ createBtn.onclick = function() {
   if (inputElement.value.length === 0) {
     return
   }
+  const newNote = {
+    title: inputElement.value,
+    completed: false
+  }
   listElement.insertAdjacentHTML(
         'beforeend', 
-        getNoteTemplate(inputElement.value)
+        getNoteTemplate(newNote)
       )
       inputElement.value = '';
 }
 
-function getNoteTemplate(title) {
+function getNoteTemplate(note) {
   return `<li class="notateItem">
-        <span>${title}</span>
+        <span>${note.title}</span>
         <span class="buttons">
           <span class="check">&check;</span>
           <span class="del">&times;</span>
