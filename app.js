@@ -121,3 +121,38 @@ function getNoteTemplate(note, index) {
         </span>
       </li>`
 }
+
+/* Theory */
+
+const people = [
+  {name: 'Alex', budget: 4200},
+  {name: 'Lena', budget: 15100},
+  {name: 'Igor', budget: 300},
+  {name: 'Ksenya', budget: 7520},
+]
+
+// let findedPerson
+
+// for (let person of people) {
+//   if (person.budget === 7520) {
+//     findedPerson = person
+//   }
+// }
+
+// console.log(findedPerson)
+
+// const findPerson = people.find(function(person) {
+//   if (person.budget === 7520) {
+//     return true
+//   }
+// })
+
+// const finded = people.find((p) => p.budget === 7520)
+
+// console.log(finded)
+
+const filtered = people.filter(function(p) {
+  return p.budget > 5000
+})
+
+console.log(people)
