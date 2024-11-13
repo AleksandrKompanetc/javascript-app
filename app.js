@@ -59,11 +59,11 @@ const listElement = document.getElementById('list');
 
 const notes = [{
   title: 'write blog about massive',
-  competed: false
+  completed: true
 }, 
 {
   title: 'theory of object',
-  completed: false
+  completed: true
 }, 
 {
   title: 'learn JS',
@@ -71,10 +71,11 @@ const notes = [{
 }];
 
 function render() {
-  for (let note of notes) {
+  listElement.innerHTML = ''
+  for (let i = 0; i < notes.length; i++) {
   listElement.insertAdjacentHTML(
     'beforeend', 
-    getNoteTemplate(note)
+    getNoteTemplate(notes[i], i)
   )
 }
 }
@@ -89,19 +90,21 @@ createBtn.onclick = function() {
     title: inputElement.value,
     completed: false
   }
-  listElement.insertAdjacentHTML(
-        'beforeend', 
-        getNoteTemplate(newNote)
-      )
-      inputElement.value = '';
+  notes.push(newNote);
+  render();
+  inputElement.value = '';
 }
 
-function getNoteTemplate(note) {
+listElement.onclick = function(event) {
+  console.log(event.target)
+}
+
+function getNoteTemplate(note, index) {
   return `<li class="notateItem">
-        <span>${note.title}</span>
+        <span class="${note.completed ? 'line-through' : ''}">${note.title}</span>
         <span class="buttons">
-          <span class="check">&check;</span>
-          <span class="del">&times;</span>
+          <span class="check ${note.completed ? 'warning' : 'success'}" data-index="${index}" data-type="toggle">&check;</span>
+          <span class="del" data-index="${index}" data-type="remove">&times;</span>
         </span>
       </li>`
 }

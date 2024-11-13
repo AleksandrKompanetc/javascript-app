@@ -115,3 +115,15 @@
   color: #000;
   cursor: pointer;
 }
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.warning {
+  background-color: yellow;
+}
+
+.success {
+  background-color: green;
+}
