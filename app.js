@@ -223,3 +223,20 @@ const people = [
 // console.log(Number.isNaN(weird))
 // console.log(Number.isNaN(12))
 
+const strInt = '42'
+const strFloat = '42.42'
+
+// console.log(Number(strInt))
+// console.log(Number(strFloat))
+// console.log(parseInt(strInt))
+// console.log(parseInt(strFloat))
+// console.log(+strInt, +strFloat)
+
+const fixed = (0.1 + 0.2).toFixed(10)
+console.log(parseFloat(fixed))
+
+// BigInt
+
+console.log(BigInt(Number.MAX_SAFE_INTEGER) + 94224980n)
+console.log(-42n)
+// console.log(42.42n) // error
