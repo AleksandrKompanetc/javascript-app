@@ -193,13 +193,33 @@ const people = [
 
 // console.log(sumBudget)
 
-const string = 'Hello, how are you'
-const reversed = string
-  .split('')
-  .toReversed()
-  .join('!')
-  .split('')
-  .filter((c) => c !== '!')
-  .join('')
+// const string = 'Hello, how are you'
+// const reversed = string
+//   .split('')
+//   .toReversed()
+//   .join('!')
+//   .split('')
+//   .filter((c) => c !== '!')
+//   .join('')
 
-console.log(reversed)
+// console.log(reversed)
+
+// const num = 42 //integer
+// const float = 42.42 //float
+// const pow = 10e3
+// const big = 1_000_000
+// const negative = -10
+
+// console.log(Number.MAX_SAFE_INTEGER)
+// console.log(Math.pow(2, 53) -1)
+// console.log(Number.MIN_SAFE_INTEGER)
+// console.log(Number.MAX_VALUE)
+// console.log(Number.MIN_VALUE)
+// console.log(Number.POSITIVE_INFINITY)
+// console.log(Number.NEGATIVE_INFINITY)
+// console.log(1 / 0)
+// console.log(Number.isFinite(Infinity))
+// const weird = 23 / undefined
+// console.log(Number.isNaN(weird))
+// console.log(Number.isNaN(12))
+
