@@ -151,8 +151,55 @@ const people = [
 
 // console.log(finded)
 
-const filtered = people.filter(function(p) {
-  return p.budget > 5000
-})
+// const filtered = people.filter(function(p) {
+//   return p.budget > 5000
+// })
 
-console.log(people)
+// console.log(people)
+
+// const findedPerson = people.find(function(person) {
+//   if (person.budget === 7520) {
+//     return true
+//   } 
+// })
+
+// console.log(findedPerson)
+
+// const finded = people.find((p) => p.budget === 7520) 
+
+// console.log(finded)
+
+// const finded = people.findIndex(function(person) {
+//   return person.budget === 7520
+// })
+
+// console.log(people.with(finded, 42))
+
+// let sumBudget = 0
+// const filtered = people.filter(function(p) {
+//   return p.budget > 5000
+// })
+// filtered.forEach(function(p) {
+//   sumBudget += p.budget
+// })
+
+// const byBudget = (p) => p.budget > 5000
+// const pickBudget = (p) => p.budget
+
+// const sumBudget = people
+//   .filter(byBudget)
+//   .map(pickBudget)
+//   .reduce((acc, p) => acc + p, 0)
+
+// console.log(sumBudget)
+
+const string = 'Hello, how are you'
+const reversed = string
+  .split('')
+  .toReversed()
+  .join('!')
+  .split('')
+  .filter((c) => c !== '!')
+  .join('')
+
+console.log(reversed)
