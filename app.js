@@ -268,3 +268,9 @@ const strFloat = '42.42'
 
 // const num1 = getRandomNumber(10, 100)
 // console.log(num1)
+
+const name = 'Alex'
+const age = 29
+
+const output = `any string`
+console.log(output)
