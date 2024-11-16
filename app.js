@@ -269,8 +269,57 @@ const strFloat = '42.42'
 // const num1 = getRandomNumber(10, 100)
 // console.log(num1)
 
-const name = 'Alex'
+const firstName = 'Alex'
 const age = 29
 
-const output = `any string`
-console.log(output)
+function getAge() {
+  return age
+}
+
+// const old = 'Hello, my name is ' + name + ' and my age is ' + age
+// const output = `Hello, my name is ${name} and my age is ${getAge() > 18 ? "Can drive" : 'Cant drive'}`
+// console.log(output)
+
+// console.log(firstName.length)     
+// console.log(firstName.toUpperCase)
+// console.log(firstName.toUpperCase())
+// console.log(firstName.toLowerCase)
+// console.log(firstName.charAt(2))
+// console.log(firstName.indexOf('a'))    
+// console.log(firstName.toLowerCase().startsWith('Mrin'))  
+// console.log(firstName.endsWith('ex!'))  
+// console.log(firstName.repeat(22))
+// const password = '     my super pass     '
+// console.log(password.trim())
+                                   
+// Function declaration
+
+// function greet(name) {
+//   console.log('Hello -' + name)
+// }
+
+// Function Expression 
+
+// const greet2 = function(name) {
+//   console.log('2 Hello -' + name)
+// }
+
+// greet('Alex')
+// greet2('Alex')
+
+// console.log(typeof greet)
+
+// setTimeout(function() {
+//   greet("Aleksandr")
+// }, 1500)
+
+// let counter = 0
+// const interval = setInterval(function() {
+//   if (counter === 5) {
+//     clearInterval(interval)
+//   } else {
+//     console.log(++counter)
+//   }
+// }, 1000)
+
+
