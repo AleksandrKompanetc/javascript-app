@@ -322,4 +322,37 @@ function getAge() {
 //   }
 // }, 1000)
 
+// Arrow function
+
+// function greet(name) {
+//   console.log('Hello - ', name )
+// }
+
+// const arrow = (name, age) => {
+//   console.log('Hello - ', name, age)
+// }
+
+// const arrow2 = (name) => {
+//   console.log('Hello - ', name)
+// }
+
+// function pow(num, exp) {
+//   return Math.pow(num, exp)
+// }
+
+// const pow2 = (num,exp) => Math.pow(num, exp)
+
+// arrow('Alex', 11)
+
+// console.log(pow2(2, 3))
+
+// Default Parameter
+
+const sum = (a = 40, b = a / 2) => a + b
+console.log(sum(40, 2))
+console.log(sum())
+
+
+
+
 
