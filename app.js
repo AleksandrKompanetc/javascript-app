@@ -348,16 +348,20 @@ function getAge() {
 
 // Default Parameter
 
-const sum = (a = 40, b = a / 2) => a + b
-// console.log(sum(40, 2))
+// const summ = (a = 40, b = a / 2) => a + b
+// console.log(summ(40, 2))
 // console.log(sum())
 
 function sumAll(...numbers) {
-  let res = 0
-  return res
+  // let res = 0
+  // for (let num of numbers) {
+  //   res += num
+  // }
+  // return res
+  return numbers.reduce((acc, cur) => acc += cur, 0)
 }
 
-console.log(sumAll(1, 2, 3, 4, 5, 6, 7))
+console.log(sumAll(1, 2, 3, 4, 5, 6))
 
 
 
