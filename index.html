@@ -1,30 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="app.js" defer></script>
   <script src="theory.js" defer></script>
-  <link rel="stylesheet" href="styles.css"></link>
+  <link rel="stylesheet" href="styles.css">
+  </link>
 </head>
+
 <body class="wrapper">
   <div class="container">
     <h1 class="header">Calculator</h1>
-    <input 
-      type="number"
-      class="input1"
-      placeholder="Enter first number..."
-      id="input1"
-      value="10"
-    >
-    <input 
-      type="number"
-      class="input2"
-      placeholder="Enter second number..."
-      id="input2"
-      value="5"
-    >
+    <input type="number" class="input1" placeholder="Enter first number..." id="input1" value="10">
+    <input type="number" class="input2" placeholder="Enter second number..." id="input2" value="5">
     <div class="buttons">
       <button class="btnPlus" id="plus">+</button>
       <button class="btnMinus" id="minus">-</button>
@@ -37,12 +28,7 @@
   </div>
   <div class="container">
     <h1 class="header">Notate</h1>
-    <input 
-      type="text"
-      class="input1"
-      placeholder="Enter notate..."
-      id="title"
-    />
+    <input type="text" class="input1" placeholder="Enter notate..." id="title" />
     <button class="btnCalc" id="create">Add</button>
     <ul class="notateField" id="list">
       <!-- <li class='notateItem'>
@@ -54,5 +40,17 @@
       </li> -->
     </ul>
   </div>
+  <div class="wrap">
+    <h1 class="header">Date and Time</h1>
+      <div class="timeContainer">
+        <h3 id="output">12:12:12</h3>
+        <div class="buttons">
+          <button class="full" id="full">Full</button>
+          <button class="date" id="date">Date</button>
+          <button class="time" id="time">Time</button>
+        </div>
+      </div>
+  </div>
 </body>
+
 </html>
