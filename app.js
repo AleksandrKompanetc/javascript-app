@@ -398,7 +398,29 @@ function getAge() {
 // console.log(now.toTimeString())
 // console.log(now.toLocaleDateString())
 
+let mode = 'time'
+const output = document.getElementById('output')
+const fullBtn = document.getElementById('full')
+const dateBtn = document.getElementById('date')
+const timeBtn = document.getElementById('time')
 
+setInterval(() => {
+  output.textContent = format(mode)
+}, 1000)
+
+function format(formatMode) {
+  const now = new Date()
+  switch(formatMode) {
+    case 'time': 
+      return now.toLocaleTimeString()
+    case 'date':
+      return now.toLocaleDateString()
+    case 'full':
+      return now.toLocaleDateString() + ' ' + now.toLocaleTimeString()
+    default:
+      return now.toLocaleTimeString()
+  }
+}
 
 
 

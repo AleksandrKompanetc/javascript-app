@@ -155,7 +155,8 @@
 }
 
 .full {
-  padding: 5px 10px;
+  padding: 5px 15px;
+  border: none;
   border-radius: 5px;
   background-color: blue;
   color: #fff;
@@ -163,7 +164,8 @@
 }
 
 .date {
-  padding: 5px 10px;
+  padding: 5px 15px;
+  border: none;
   border-radius: 5px;
   background-color: green;
   color: #fff;
@@ -171,7 +173,8 @@
 }
 
 .time {
-  padding: 5px 10px;
+  padding: 5px 15px;
+  border: none;
   border-radius: 5px;
   background-color: red;
   color: #fff;
