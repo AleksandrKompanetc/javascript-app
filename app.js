@@ -352,17 +352,51 @@ function getAge() {
 // console.log(summ(40, 2))
 // console.log(sum())
 
-function sumAll(...numbers) {
-  // let res = 0
-  // for (let num of numbers) {
-  //   res += num
-  // }
-  // return res
-  return numbers.reduce((acc, cur) => acc += cur, 0)
-}
+// function sumAll(...numbers) {
+//   let res = 0
+//   for (let num of numbers) {
+//     res += num
+//   }
+//   return res
+//   return numbers.reduce((acc, cur) => acc += cur, 0)
+// }
 
-console.log(sumAll(1, 2, 3, 4, 5, 6))
+// console.log(sumAll(1, 2, 3, 4, 5, 6))
 
+// Closures
+
+// function createPerson(name) {
+//   return function (lastname) {
+//     console.log(name + ' ' + lastname)
+//   }
+// }
+
+// const addLastName = createPerson('Aleksandr')
+// addLastName('Kompanets')
+// addLastName('Sergeevich')
+// addLastName('WebDeveloper')
+
+// Date
+
+// console.log(new Date())
+
+// const now = new Date()
+
+// const start = new Date(1000 * 60 * 60 * 24 * 365)
+// const date = new Date(2011, 0, 4, 12, 42, 12)
+
+// console.log(now.getFullYear())
+// console.log(now.getMonth())
+// console.log(now.getDate())
+// console.log(now.getHours())
+// console.log(now.getMinutes())
+// console.log(now.getSeconds())
+
+// now.setFullYear(2055)
+
+// console.log(now.toDateString())
+// console.log(now.toTimeString())
+// console.log(now.toLocaleDateString())
 
 
 
