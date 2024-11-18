@@ -404,9 +404,25 @@ const fullBtn = document.getElementById('full')
 const dateBtn = document.getElementById('date')
 const timeBtn = document.getElementById('time')
 
-setInterval(() => {
+function bindMode(name) {
+  return function() {
+    mode = name
+    update()
+  }
+}
+
+fullBtn.onclick = bindMode('full')
+
+dateBtn.onclick = bindMode('date')
+
+timeBtn.onclick = bindMode('time')
+
+setInterval(update, 1000)
+update()
+
+function update() {
   output.textContent = format(mode)
-}, 1000)
+}
 
 function format(formatMode) {
   const now = new Date()
