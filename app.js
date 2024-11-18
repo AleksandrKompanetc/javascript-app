@@ -488,8 +488,8 @@ const person = {
 // })
 
 const logger = {
-  keys() {
-    console.log('Object keys:', Object.keys(this))
+  keys(obj) {
+    console.log('Object keys:', Object.keys(obj))
   },
 
   keysAndValues() {
@@ -500,4 +500,8 @@ const logger = {
   }
 }
 
-logger.keysAndValues()
+// const bound = logger.keys.bind(person)
+// bound()
+
+logger.keys.call(person)
+logger.keys.apply(person)
