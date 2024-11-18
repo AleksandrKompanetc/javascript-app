@@ -269,12 +269,12 @@ const strFloat = '42.42'
 // const num1 = getRandomNumber(10, 100)
 // console.log(num1)
 
-const firstName = 'Alex'
-const age = 29
+// const firstName = 'Alex'
+// const age = 29
 
-function getAge() {
-  return age
-}
+// function getAge() {
+//   return age
+// }
 
 // const old = 'Hello, my name is ' + name + ' and my age is ' + age
 // const output = `Hello, my name is ${name} and my age is ${getAge() > 18 ? "Can drive" : 'Cant drive'}`
@@ -438,6 +438,66 @@ function format(formatMode) {
   }
 }
 
+const person = {
+  name: 'Aleksandr',
+  age: 35,
+  isProgrammist: true,
+  languages: ['ua', 'en'],
+  address: {
+    city: 'Nizhin',
+    street: '3 Mikrorayon'
+  },
+  'complex key': 'complex value',
+  ['key_' + 21 * 2]: 'computed value',
+}
 
+// console.log(person.address)
+// const addressKey = 'address'
+// console.log(person[addressKey])
+// console.log(person['complex key'])
 
+// person.age++
+// person.languages.push('de')
 
+// console.log(person.languages)
+
+// delete person.address
+
+// const name = person.name
+// const age = person.age
+// const languages = person.languages
+
+// const {name: firstName = 'TEST', age, languages} = person
+
+// console.log(languages, name, age)
+
+// for (let key in person) {
+//   console.log(key)
+//   console.log(person[key])
+// }
+
+// for (let key in person) {
+//   if (person.hasOwnProperty(key)) {
+//     console.log(person[key])
+//   }
+// }
+
+// const keys = Object.keys(person)
+// keys.forEach((key) => {
+//   console.log(person[key])
+// })
+
+const logger = {
+  keys() {
+    console.log('Object keys:', Object.keys(this))
+  },
+
+  keysAndValues() {
+    Object.keys(this).forEach((key) => {
+      console.log('Key:', key)
+      console.log('Values:', this[key])
+    })
+  }
+}
+
+logger.keysAndValues()
