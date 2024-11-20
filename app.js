@@ -487,18 +487,18 @@ const person = {
 //   console.log(person[key])
 // })
 
-const logger = {
-  keys(obj) {
-    console.log('Object keys:', Object.keys(obj))
-  },
+// const logger = {
+//   keys(obj) {
+//     console.log('Object keys:', Object.keys(obj))
+//   },
 
-  keysAndValues() {
-    Object.keys(this).forEach((key) => {
-      console.log('Key:', key)
-      console.log('Values:', this[key])
-    })
-  }
-}
+//   keysAndValues() {
+//     Object.keys(this).forEach((key) => {
+//       console.log('Key:', key)
+//       console.log('Values:', this[key])
+//     })
+//   }
+// }
 
 // const bound = logger.keys.bind(person)
 // bound()
@@ -506,34 +506,57 @@ const logger = {
 // logger.keys.call(person, false)
 // logger.keys.apply(person)
 
-class Human {
-  static isHuman = true
+// class Human {
+//   static isHuman = true
 
-  humanGreet() {
-    console.log('Greet from human')
-  }
+//   humanGreet() {
+//     console.log('Greet from human')
+//   }
 
-  toString() {
-    console.log('to string')
-  }
-}
+//   toString() {
+//     console.log('to string')
+//   }
+// }
 
-class Person extends Human {
-  constructor(name, age) {
-    super()
-    this.name = name ?? 'Undefined name'
-    this.age = age ?? 'Undefined age'
-  }
+// class Person extends Human {
+//   constructor(name, age) {
+//     super()
+//     this.name = name ?? 'Undefined name'
+//     this.age = age ?? 'Undefined age'
+//   }
 
-  sayHello() {
-    console.log('Hello from ', this.name)
-  }
-}
+//   sayHello() {
+//     console.log('Hello from ', this.name)
+//   }
+// }
 
-const person1 = new Person('Aleksandr', 35)
-const person2 = new Person('Oleg', 21)
+// const person1 = new Person('Aleksandr', 35)
+// const person2 = new Person('Oleg', 21)
 
-person1.sayHello()
-person2.sayHello()
+// person1.sayHello()
+// person2.sayHello()
 
-console.log(Person.isHuman)
+// console.log(Person.isHuman)
+
+// const timeout = setTimeout(() => {
+//   console.log('after 2 seconds')
+// }, 2000)
+
+// clearTimeout(timeout)
+
+// setTimeout(() => {
+//   console.log('after 3 seconds')
+// }, 3000)
+
+// let count = 0
+// setInterval(() => {
+//   console.log('tick', ++count)
+// }, 1000)
+
+// function delay(callback, time = 1000) {
+//   setTimeout(callback, time)
+// }
+
+// delay(() => {
+//   console.log('timeout')
+// }, 2000)
