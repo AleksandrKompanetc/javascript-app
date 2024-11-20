@@ -503,5 +503,37 @@ const logger = {
 // const bound = logger.keys.bind(person)
 // bound()
 
-logger.keys.call(person)
-logger.keys.apply(person)
+// logger.keys.call(person, false)
+// logger.keys.apply(person)
+
+class Human {
+  static isHuman = true
+
+  humanGreet() {
+    console.log('Greet from human')
+  }
+
+  toString() {
+    console.log('to string')
+  }
+}
+
+class Person extends Human {
+  constructor(name, age) {
+    super()
+    this.name = name ?? 'Undefined name'
+    this.age = age ?? 'Undefined age'
+  }
+
+  sayHello() {
+    console.log('Hello from ', this.name)
+  }
+}
+
+const person1 = new Person('Aleksandr', 35)
+const person2 = new Person('Oleg', 21)
+
+person1.sayHello()
+person2.sayHello()
+
+console.log(Person.isHuman)
