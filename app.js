@@ -561,15 +561,15 @@ const person = {
 //   console.log('timeout')
 // }, 2000)
 
-// const delay = (time = 1000) => {
-//   const promise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       // resolve([1, 2, 3])
-//       reject('Error in delay')
-//     }, time)
-//   })
-//   return promise
-// }
+const delay = (time = 1000) => {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // resolve([1, 2, 3])
+      reject('Error in delay')
+    }, time)
+  })
+  return promise
+}
 
 // delay(2500)
 //   .then((data) => {
@@ -587,6 +587,16 @@ const getData = () => new Promise((resolve) => resolve([1, 2, 3]))
 
 getData().then((array) => console.log(array))
 
-function asyncExample() {
-  
+async function asyncExample() {
+  try {
+    await delay(3000)
+    const data = await getData()
+    console.log(data)
+  } catch (err) {
+    console.log(err)
+  } finally {
+    console.log('Finally')
+  }
 }
+
+asyncExample()
