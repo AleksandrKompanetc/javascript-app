@@ -561,15 +561,15 @@ const person = {
 //   console.log('timeout')
 // }, 2000)
 
-const delay = (time = 1000) => {
-  const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      // resolve([1, 2, 3])
-      reject('Error in delay')
-    }, time)
-  })
-  return promise
-}
+// const delay = (time = 1000) => {
+//   const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       // resolve([1, 2, 3])
+//       reject('Error in delay')
+//     }, time)
+//   })
+//   return promise
+// }
 
 // delay(2500)
 //   .then((data) => {
@@ -583,20 +583,53 @@ const delay = (time = 1000) => {
 //   console.log('Finally')
 // })
 
-const getData = () => new Promise((resolve) => resolve([1, 2, 3]))
+// const getData = () => new Promise((resolve) => resolve([1, 2, 3]))
 
-getData().then((array) => console.log(array))
+// getData().then((array) => console.log(array))
 
-async function asyncExample() {
+// async function asyncExample() {
+//   try {
+//     await delay(3000)
+//     const data = await getData()
+//     console.log(data)
+//   } catch (err) {
+//     console.log(err)
+//   } finally {
+//     console.log('Finally')
+//   }
+// }
+
+// asyncExample()
+
+// const car = {
+//   model: 'Tesla',
+//   year: '2024'                                                    
+// }
+
+// const json = JSON.stringify.placeholder
+// const parsed = json.parsed
+
+const list = document.querySelector('#list')
+
+async function start() {
   try {
-    await delay(3000)
-    const data = await getData()
-    console.log(data)
+    const resp = await fetch('https://jsonplaceholder.typicode.com/users')
+    const data = await resp.json()
+    render(data)
   } catch (err) {
     console.log(err)
-  } finally {
-    console.log('Finally')
   }
 }
 
-asyncExample()
+function render(users = []) {
+  const html = users.map(toHTML).join('')
+  list.innerHTML = html
+}
+
+function toHTML(user) {
+  return `
+    <li class='list-group-item'>${user.name}</li>  
+  `
+}
+
+start()
