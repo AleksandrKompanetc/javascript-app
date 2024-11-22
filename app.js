@@ -609,26 +609,81 @@ const person = {
 // const json = JSON.stringify.placeholder
 // const parsed = json.parsed
 
-const list = document.querySelector('#list')
+// const list = document.querySelector('#list')
+// const filter = document.querySelector('#filter')
+// filter.addEventListener('input', (event) => {
+//   console.log('input', event.target.value)
+// })
+
+// async function start() {
+//   list.innerHTML = 'Loading...'
+//   try {
+//     const resp = await fetch('https://jsonplaceholder.typicode.com/users')
+//     const data = await resp.json()
+
+//     setTimeout(() => {
+//       render(data)
+//     }, 2000)
+//   } catch (err) {
+//     list.style.color = 'red'
+//     console.log(err)
+//   }
+// }
+
+// function render(users = []) {
+//   const html = users.map(toHTML).join('')
+//   list.innerHTML = html
+// }
+
+// function toHTML(user) {
+//   return `
+//     <li class='list-group-item'>${user.name}</li>  
+//   `
+// }
+
+// start() 
+
+const userList = document.querySelector('#userList')
+const filter = document.querySelector('#filter')
+let USERS = []
+
+filter.addEventListener('input', (event) => {
+  const value = event.target.value.toLowerCase()
+  const filteredUsers = USERS.filter((user) => 
+    user.name.toLowerCase().includes(value)
+  )
+  render(filteredUsers)
+})
 
 async function start() {
+  userList.innerHTML = 'Loading...'
   try {
     const resp = await fetch('https://jsonplaceholder.typicode.com/users')
     const data = await resp.json()
-    render(data)
-  } catch (err) {
-    console.log(err)
+    setTimeout(() => {
+      USERS = data
+      render(data)
+    }, 2000)
+  } catch(err) {
+    userList.style.color = 'red'
+    userList.innerHTML = err.message
+  } finally {
+
   }
 }
 
-function render(users = []) {
+async function render(users = []) {
+  if (users.length === 0) {
+    userList.innerHTML = 'No matched users!'
+  } else {
   const html = users.map(toHTML).join('')
-  list.innerHTML = html
+  userList.innerHTML = html
+  }
 }
 
 function toHTML(user) {
   return `
-    <li class='list-group-item'>${user.name}</li>  
+    <li class='list-group-item'>${user.name}</li>
   `
 }
 

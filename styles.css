@@ -189,7 +189,14 @@
   box-sizing: border-box;
 }
 
+.list-group {
+  
+}
+
 .list-group-item {
-  display: block;
-  z-index: 100;
+  margin-bottom: 1px;
+  padding: 5px;
+  width: 100%;
+  background-color: #fff;
+  list-style: none;
 }
